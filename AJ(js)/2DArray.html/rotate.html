@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>rotate</h1>
+
+    <script>
+        function rotateMatrix(matrix) {
+    const n = matrix.length;
+    
+    // Transpose the matrix
+    for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            [matrix[i][j], matrix[j][i]] = [matrix[j][i], matrix[i][j]];
+        }
+    }
+
+    // Reverse each row
+    for (let i = 0; i < n; i++) {
+        matrix[i].reverse();
+    }
+
+    return matrix;
+}
+
+// Example usage
+const matrix1 = [
+    [1, 2],
+    [2, 3]
+];
+
+const matrix2 = [
+    [7, 2, 3],
+    [2, 3, 4],
+    [5, 6, 1]
+];
+
+console.log("Example 1:");
+console.log("Before rotation:");
+for (let row of matrix1) {
+    console.log(row.join(" "));
+}
+console.log("After rotation:");
+const rotatedMatrix1 = rotateMatrix(matrix1);
+for (let row of rotatedMatrix1) {
+    console.log(row.join(" "));
+}
+
+console.log("\nExample 2:");
+console.log("Before rotation:");
+for (let row of matrix2) {
+    console.log(row.join(" "));
+}
+console.log("After rotation:");
+const rotatedMatrix2 = rotateMatrix(matrix2);
+for (let row of rotatedMatrix2) {
+    console.log(row.join(" "));
+}
+
+    </script>
+</html>

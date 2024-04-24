@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; justify-content: space-evenly;width: 100vw; height: 100vh;">
+    <div class="col" style="width: 200px; height: 200px; border: 2px solid black;"><p  id="drag1" draggable="true">faizurRahman</p></div>
+    <div id="drop1" class="col" style="width: 200px; height: 200px; border: 2px solid black;"></div>
+   
+    <script>
+        let ele = null
+      document.getElementById('drag1').addEventListener('dragstart',(e)=>{
+       console.log("drag start",e)
+       ele = e.target;
+
+       console.log(ele)
+       })
+
+       document.getElementById('drop1').addEventListener('drop',(e)=>{
+        console.log("drop",e)
+        document.getElementById('drop1').appendChild(ele)
+       })
+
+       document.getElementById('drop1').addEventListener('dragover',(e)=>{
+        console.log("dropover",e)
+        e.preventDefault();
+       })
+
+    </script>
+</body>
+</html>

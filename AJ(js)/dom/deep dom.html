@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom using array</title>
+</head>
+<body id="my-body" style="display:flex; align-items: center; justify-content: center; width:100vw;height: 100vh; justify-content:space-evenly;">
+    <!-- <h1>Dom using array</h1> -->
+    <!-- js part -->
+
+    <script>
+        let body = document.getElementById('my-body')
+
+        let arr = [
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+            {heading:'Buy one Get free',text:'offer are Avliable on only 18 March'},
+           
+        ]
+        arr.forEach((item)=>{
+
+            // first way to make element on document throug dom
+
+
+            // body.innerHTML += `
+            // <div style="border:2px solid;padding:10px">
+            //     <h1>${item.heading}</h1>
+            //     <p>${item.text}</P>
+            // </div>
+            //`
+
+
+            // second way dom create update
+
+            
+            let div = document.createElement('div');
+            div.setAttribute('class','my-card')
+            // div.style.border='2px solid'
+            // div.style.paddim='10px'
+            div.style.border='2px solid'
+            div.style.paddim='10px'
+            let h1 = document.createElement('h1');
+            h1.textContent = item.heading;
+
+            let p = document.createElement('p');
+            p.textContent = item.text;
+
+            div.appendChild(h1)
+            div.appendChild(p)
+
+            body.appendChild(div)
+        })
+    </script>
+</body>
+</html>

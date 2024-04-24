@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop in function</title>
+</head>
+<body>
+    <script>
+        // function loop(n){
+        //     for(let i=1;i<n;i++){
+        //         console.log(i)
+        //         if(i==5){
+        //             return i; // after return   execution of  will stopp...
+        //         }
+        //     }
+        // }
+
+        // console.log("return value = "+loop(3000))
+
+//         function isSameType(value1, value2) {
+//   //your js code here
+// 	if(typeof value1===typeof value2){
+// 		return true;
+// 	}
+// 	else{
+// 		return false;
+// 	}
+// }
+
+// // do not change the code below.
+// let value1 = prompt("Enter Start of the Range.");
+// let value2 =  prompt("Enter End Of the Range.");
+// alert(isSameType(value1, value2));
+// //console.log(isSameType("false","false"))
+
+// function daysOfAYear(year){
+// 	if((year%4===0 && year%100!==0) || (year%400===0)){
+
+//         return 366;
+//     }
+
+
+// 	else{
+
+// 		return 365
+//     }
+// }
+
+// console.log(daysOfAYear(2024))
+
+// 
+
+function countFreqDigit(n, d) {
+  // write code here
+   var count=0;
+    while(n!=0){
+        let i = n%10;
+        if(i===d){
+            count = count+1;
+        }
+        n = Math.floor(n/10) ;
+    }
+    return count
+}
+let count = countFreqDigit(1111114444,1)
+console.log(count)
+
+// function countFrequencyNumber(N, D) {
+//     // Convert N to a string
+//     const strN = N.toString();
+    
+//     // Initialize a counter for the frequency of digit D
+//     let frequency = 0;
+    
+//     // Iterate over each character of the string representation of N
+//     for (let i = 0; i < strN.length; i++) {
+//         // Check if the current character is equal to the digit D
+//         if (strN[i] === D.toString()) {
+//             // If it is, increment the frequency counter
+//             frequency++;
+//         }
+//     }
+    
+    // Return the frequency of digit D
+//     return frequency;
+// }
+
+// // Example usage:
+// console.log(countFrequencyNumber(1111221, 1)); // Output: 5
+// console.log(countFrequencyNumber(554, 4));     // Output: 1
+
+    </script>
+</body>
+</html>

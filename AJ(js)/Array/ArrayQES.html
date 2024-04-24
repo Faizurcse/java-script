@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array questions</title>
+</head>
+<body>
+    <h1>Arrays questions</h1>
+
+    <script>
+        //### finding ratio of +ve,-ve,and zeros in arr
+         function printRatios(arr) {
+  // write code here
+    let pos=0;
+    let neg=0;
+    let zero=0;
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>0){
+            pos++;
+            }
+        else if(arr[i]<0){
+            neg++;
+        }
+        else{
+            zero++;
+        }
+    }
+    console.log((pos/arr.length).toFixed(6))
+    console.log((neg/arr.length).toFixed(6))
+    console.log((zero/arr.length).toFixed(6))
+}
+
+let arr =[12,-23,12,0]
+printRatios(arr)
+    </script>
+</body>
+</html>

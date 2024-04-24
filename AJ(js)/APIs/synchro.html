@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('hii-1')
+
+        /* in synchoromus nature if get error next line not 
+        execute but when use promise or any asynchronous mechanism then if next
+         line error but they not effect error after lines the ecxecute easily*/
+
+       //  like that
+         
+       let p = new Promise((resolve,reject)=>{
+        resolve('heee')
+       })
+
+       p.then((data)=>{
+        console.log(data)
+       })
+
+
+        console.log('hii-3')
+    </script>
+</body>
+</html>

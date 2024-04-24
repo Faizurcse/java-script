@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CallBackFunction</h1>
+
+    <script>
+      //     function sayhello(callback){
+      //         console.log("hii-1")
+      //         callback() // calling Another function its
+      //     }
+
+      //     function callback(){
+      //         console.log("hii-2")
+      //     }
+
+      //     sayhello(callback)
+
+      //    setInterval(heyy,1000)// it is also call back function using pre-define methods
+      //    function heyy(){
+      //     console.log("hii")
+      //    }
+
+      // here making chain of callBack function and it is callback Hell
+
+      function getnum(num1, num2, sum) {
+        const arr = [];
+        console.log("Empty array", arr);
+        sum(num1, num2, arr, sub);
+      }
+
+      function sum(num1, num2, arr, sub) {
+        arr.push(num1 + num2);
+        console.log("Sum of two numbers :", arr);
+        sub(num1, num2, arr, mul);
+      }
+
+      function sub(num1, num2, arr, mul) {
+        arr.push(num1 - num2);
+        console.log("Subtraction two numbers :", arr);
+        mul(num1, num2, arr);
+      }
+
+      function mul(num1, num2, arr) {
+        arr.push(num1 * num2);
+        console.log("Mulitiply of two numbers", arr);
+      }
+
+      getnum(10, 20, sum);
+    </script>
+  </body>
+</html>

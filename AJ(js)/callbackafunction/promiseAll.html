@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promise All</h1>
+    <script>
+        // promise all execute when all promise resolve no matter how much take time
+        const p1 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("complted-1")
+            },1000)
+        })
+
+        // const p2 = new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve("complted-1")
+        //     },3000)
+        // })
+        const p2 = 90// non promise
+
+        const p3 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("complted-1")
+            },3000)
+        })
+
+        // Promise.all([p1,p2,p3]).then((data)=>{
+        //     console.log(data)
+        // })
+
+        const p5 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("complted-1")
+            },1000)
+        })
+
+        const p6 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                reject("complted-1")
+            },3000)
+        })
+
+       // const p6 = 90// non promise
+
+        const p7 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("complted-1")
+            },3000)
+        })
+
+        Promise.all([p5,p6,p7]).then((data)=>{
+            console.log(data)
+        })
+    </script>
+</body>
+</html>

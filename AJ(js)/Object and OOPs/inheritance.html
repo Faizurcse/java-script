@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Inheritance</h1>
+
+    <script>
+        
+        class Parent{
+            constructor(num1,num2){
+                this.num1=num1;
+                this.num2=num2;
+            }
+            add(){
+                let sum = this.num1+this.num2;
+                return sum;
+            }
+        }
+
+        class child extends Parent{
+            //   constructor(n,m){
+        
+            //  }
+            test(){
+                console.log(super.add())
+            }
+
+        }
+
+       
+       let ob2= new child(2,2)
+       ob2.test()
+  
+    </script>
+</body>
+</html>

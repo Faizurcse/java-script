@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <script src="script.js " defer></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Better Instagram</title>
+    <style>
+        #div1 {
+  background-image: url("https://picsum.photos/id/237/200/300");
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
+
+#div2 {
+  background-image: url("https://picsum.photos/seed/picsum/200/300");
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
+
+#div3 {
+  background-image: url("https://picsum.photos/200/300?grayscale");
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
+
+#div4 {
+  background-image: url("https://picsum.photos/200/300/");
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
+
+#div5 {
+  background-image: url("https://picsum.photos/200/300.jpg");
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
+
+#div6 {
+  background-image: url("https://picsum.photos/id/102/200/300");
+  height: 300px;
+  width: 200px;
+  margin: 20px;
+}
+
+div.container {
+  border: 5px solid #555;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  border: 5px solid rgb(0, 195, 255);
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  margin: 20px;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Arrange Images by drag and drop</h1>
+    <div class="flex" id="parent">
+        <div id="div1" ondragstart="onDragstart(event)" ondrop="onDrop(event)" ondragover="onOver(event)" draggable="true" class="image">Image 1</div>
+        <div id="div2" ondragstart="onDragstart(event)" ondrop="onDrop(event)" ondragover="onOver(event)" draggable="true" class="image">Image 2</div>
+        <div id="div3" ondragstart="onDragstart(event)" ondrop="onDrop(event)" ondragover="onOver(event)" draggable="true" class="image">Image 3</div>
+        <div id="div4" ondragstart="onDragstart(event)" ondrop="onDrop(event)" ondragover="onOver(event)" draggable="true" class="image">Image 4</div>
+        <div id="div5" ondragstart="onDragstart(event)" ondrop="onDrop(event)" ondragover="onOver(event)" draggable="true" class="image">Image 5</div>
+        <div id="div6" ondragstart="onDragstart(event)" ondrop="onDrop(event)" ondragover="onOver(event)" draggable="true" class="image">Image 6</div>
+    </div>
+
+    <script>
+        let ele = null;
+
+        function onDragstart(e) {
+            ele = e.target;
+        }
+
+        function onDrop(e) {
+            e.preventDefault();
+            ele.parentNode.removeChild(ele);
+            e.target.appendChild(ele);
+        }
+
+        function onOver(e) {
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

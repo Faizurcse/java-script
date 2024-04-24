@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Promise Chain</h1>
+
+    <script>
+      //     const p1 = new Promise((resolve,reject)=>{
+      //         setTimeout(()=>{
+      //             resolve("Go to the resturant and wait for the waiter!")
+      //         },2000)
+      //     })
+
+      //     const p2 = new Promise((resolve,reject)=>{
+      //         setTimeout(()=>{
+      //             resolve("waiter came take order!")
+      //         },4000)
+      //     })
+
+      //     const p3 = new Promise((resolve,reject)=>{
+      //         setTimeout(()=>{
+      //             resolve("food come")
+      //         },6000)
+      //     })
+
+      //     const p4 = new Promise((resolve,reject)=>{
+      //         setTimeout(()=>{
+      //             resolve("food finished,take bills")
+      //         },8000)
+      //     })
+
+      //     const p5 = new Promise((resolve,reject)=>{
+      //         setTimeout(()=>{
+      //             resolve("paid bills")
+      //         },10000)
+      //     })
+
+      //   //  console.log(p1,p2,p3,p4,p5)
+
+      //     p1.then((data1)=>{
+      //         console.log(data1);
+      //         console.log(p1)
+      //         return p2
+      //     }).then((data2)=>{
+      //         console.log(data2);
+      //         console.log(p2)
+      //         return p3
+      //     }).then((data3)=>{
+      //         console.log(data3)
+      //         console.log(p3)
+      //         return p4
+      //     }).then((data4)=>{
+      //         console.log(data4)
+      //         console.log(p4)
+      //         return p5
+
+      //     }).then((data5)=>{
+      //         console.log(data5)
+      //         console.log(p5)
+      //         console.log("---------------------")
+      //         console.log("all promise done")
+      //     })
+
+      // second way to define promise using function
+
+      const p1 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("Go to the resturant and wait for the waiter!"); // resolve is nothing but returning data to promises
+          }, 2000);
+        });
+      };
+
+      const p2 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("waiter came take order!");
+           // reject("waiter came not take order!");
+          }, 4000);
+        });
+      };
+
+      const p3 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("food come");
+          }, 6000);
+        });
+      };
+
+      const p4 = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("food finished,take bills");
+          }, 8000);
+        });
+      };
+
+      const p5 = () => {
+      return  new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("paid bills");
+          }, 10000);
+        });
+      };
+
+      //  console.log(p1,p2,p3,p4,p5)
+
+      p1()
+        .then((data1) => {
+          console.log(data1);
+          console.log(p1);
+          return p2();
+        })
+        .then((data2) => {
+          console.log(data2);
+          console.log(p2);
+          return p3();
+        })
+        .then((data3) => {
+          console.log(data3);
+          console.log(p3);
+          return p4();
+        })
+        .then((data4) => {
+          console.log(data4);
+          console.log(p4);
+          return p5();
+        })
+        .then((data5) => {
+          console.log(data5);
+          console.log(p5);
+          console.log("---------------------");
+          console.log("all promise done");
+        })
+        // .catch((data)=>{
+        //     console.log("giving error")
+        // })
+    </script>
+  </body>
+</html>

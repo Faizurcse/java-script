@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>traversing the dom objects</h1>
+    <div id="parent">
+      <div id="child1">child1</div>
+      <div id="child2">child2</div>
+      <div id="child3">child3</div>
+    </div>
+    <script>
+        
+      let parentdiv = document.getElementById("parent");
+      //console.log(parent)// getting parent elemnts
+      //console.log(parentdiv.parentNode)// giving exact parent node
+      //console.log(parent.parentElement)// giving tottal elements
+      console.log(parentdiv.children);
+      //trversing html collection nodelist
+      for (let i = 0; i < parentdiv.children.length; i++) {
+        console.log(parentdiv.children[i].textContent);
+      }
+      let a = document.getElementById("child1");
+
+      console.log(a.nextElementSibling); // giving siblings
+      console.log(a.nextElementSibling.nextElementSibling);
+
+      console.log(
+        a.nextElementSibling.nextElementSibling.previousElementSibling
+      );
+
+      console.log(parentdiv.firstChild)
+      console.log(parentdiv.firstElementChild)
+      console.log(parentdiv.lastElementChild)
+      console.log(parentdiv)
+    </script>
+  </body>
+</html>

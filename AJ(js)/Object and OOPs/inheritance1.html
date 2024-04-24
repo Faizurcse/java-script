@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>inheritance</h1>
+
+    <script>
+      class Person {
+        constructor(name,age) {
+          this.name = name;
+          this.age = age;
+        }
+        get_name() {
+          return this.name;
+        }
+        set_age(age){
+          this.age = age;
+        }
+      }
+      class Student extends Person {
+        study() {
+          console.log(super.get_name() + " is studying");
+        }
+      }
+      class Teacher extends Person {
+        teach() {
+          console.log(super.get_name() + " is teaching");
+        }
+      }
+
+    //   const person = new Person("John", 25);
+    //   console.log(person.name); // Output: John
+
+     // person.age = 30;
+     // console.log(person.age); // Output: 30
+
+      const student = new Student("Alice", 22);
+      student.study(); // Output: Alice is studying
+
+      const teacher = new Teacher("Bob", 40);
+      teacher.teach(); // Output: Bob is teaching
+    </script>
+  </body>
+</html>

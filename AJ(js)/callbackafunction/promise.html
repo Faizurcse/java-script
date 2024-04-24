@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>promise</h1>
+
+    <script>
+        // let promise1 = new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //        // reject("resoved")
+        //        resolve("resolve")
+        //     },3000)
+        // })
+
+
+        //  console.log('firstly executed',promise1)
+
+        // promise1.then((data)=>{
+        //     console.log("this is clr",data)
+        // })
+        // .catch((data)=>{
+        //     console.log("hi2",data)
+        // })
+
+        // 2nd way to declare promises
+
+        function myPromise (){
+            const promise = new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("executed")
+                },3000)
+            })
+            return promise;
+        }
+
+        console.log('firstly executed',myPromise())
+
+        myPromise().then((data)=>{
+            console.log("here",data)
+            console.log("all clear",myPromise())
+        })
+    </script>
+</body>
+</html>

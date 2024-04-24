@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Camel Case You are given a string consisting of different words separated
+      by underscores _. You have to convert the string to camel case. The first
+      letter of the entire case should be lowercase. eg: app_dsd_sdda to
+      appDsdSdda Note: StringBuilder in Java represents a mutable sequence of
+      characters. Input Format The first line contains the number of test cases.
+      For each test case: The first line contains the string S. Output Format
+      For each test case print the final formed string in a new line. Example 1
+      Input: 1 abb_b_cc_d Output: abbBCcD Explanation: We remove the underscores
+      and convert the next character to uppercase. in javascript Example 2
+      Input: 1 how_are_you Output: howAreYou
+    </h1>
+
+    <script>
+      const readline = require("readline");
+
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+
+      rl.on("line", (t) => {
+        t = Number(t);
+        let count = 0;
+        rl.on("line", (input) => {
+          if (count < t) {
+            console.log(convertToCamelCase(input));
+            count++;
+          }
+          if (count === t) {
+            rl.close();
+          }
+        });
+      });
+
+      function convertToCamelCase(s) {
+        let result = "";
+        let nextUpperCase = false;
+
+        for (let i = 0; i < s.length; i++) {
+          const char = s[i];
+          if (char === "_") {
+            nextUpperCase = true;
+          } else {
+            if (nextUpperCase) {
+              result += char.toUpperCase();
+              nextUpperCase = false;
+            } else {
+              result += char.toLowerCase();
+            }
+          }
+        }
+
+        return result;
+      }
+    </script>
+  </body>
+</html>

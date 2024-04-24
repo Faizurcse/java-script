@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <!-- UI part html css -->
+  <body style="background-color: black">
+    <h1
+      style="
+        color: aliceblue;
+        font-weight: 100;
+        font-size: xxx-large;
+        margin-left: 50px;
+      "
+    >
+      Counter using HTML
+    </h1>
+    <div
+      style="
+        color: gainsboro;
+        font-size: larger;
+        margin-left: 50px;
+        display: inline;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+      "
+    >
+      Your current count is : <span id="currentcount"></span>
+    </div>
+    <div id="err" style="color: red; margin-left: 50px; margin-top: 30px"></div>
+
+    <div style="margin-left: 50px; margin-top: 30px">
+      <button id="dec" style="padding: 10px 30px">Decrement</button>
+      <button id="inc" style="padding: 10px 30px; margin-left: 10px">
+        Increment
+      </button>
+      <button
+        id="clr"
+        style="
+          padding: 10px 45px;
+          margin-left: 10px;
+          background-color: black;
+          color: azure;
+          border: 1px dotted white;
+        "
+      >
+        Clear
+      </button>
+    </div>
+
+    <!-- logic part JS -->
+
+    <script>
+      let count = 0;
+      document.getElementById("dec").addEventListener("click", () => {
+        if (count > 1) {
+          let a = document.getElementById("currentcount");
+          a.innerText = count = count - 1;
+          let b = document.getElementById("err");
+          b.innerText = "";
+          document.getElementById("clr").style.display = "block";
+        } else {
+          let a = document.getElementById("err");
+          a.innerText = "Error : Cannot go below 0";
+        }
+      });
+
+      document.getElementById("inc").addEventListener("click", () => {
+        let a = document.getElementById("currentcount");
+        a.innerText = count = count + 1;
+        let b = document.getElementById("err");
+        b.innerText = "";
+        document.getElementById("clr").style.display = "block";
+      });
+
+      document.getElementById("clr").addEventListener("click", () => {
+        let a = document.getElementById("currentcount");
+        if (
+          count === 0 ||
+          document.getElementById("clr").style.display === "block"
+        ) {
+          a.innerText = 0;
+          document.getElementById("clr").style.display = "none";
+        } else if (
+          count > 1 ||
+          document.getElementById("clr").style.display === "block"
+        ) {
+          document.getElementById("clr").style.display = "block";
+          a.innerText = 0;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uses of return</title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            let sum = a+b;
+            console.log("Sum :"+sum);
+            return sum; // it is returning the values to the caller....
+            console.log("bye...")/* this line of code not working why because after return no anyy code executing after 
+           return kew word function execution will be stopped*/
+        }
+        // let add = add(2,3)
+       
+       // console.log("After function  sum = "+add);
+
+       console.log("After function  sum = "+add(3,3));
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- do not change this code -->
+    <input type="number" id="ip" />
+    <button id="btn">Start</button>
+    <div id="output"></div>
+   <script>
+   let btn = document.getElementById('btn');
+let input = document.getElementById('ip')
+btn.addEventListener('click',()=>{
+	const p1=new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve(input.value)
+		},2000)
+	})
+
+	
+	const p2=new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve(input.value)
+		},2000)
+	})
+
+	
+	p1.then((data1)=>{
+		let output = document.getElementById('output')
+		output.innerText = data1
+        console.log(data1)
+		return p2
+	}).then((data2)=>{
+		let output = document.getElementById('output')
+		output.innerText = data2
+        console.log(data2)
+	})
+})
+   </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Element from Array</title>
+  <style>
+   
+  </style>
+</head>
+<body>
+
+ 
+  <p id="arrayDisplay"></p>
+
+  <script>
+    
+    let array = [1,2,3];
+
+    
+    function displayArray() {
+      document.getElementById('arrayDisplay').innerText = array.join('');
+    }
+
+    
+    function deleteElement(index) {
+      if (index > -1) {
+        array.splice(index, 1);
+        if (array.length === 0) {
+          document.getElementById('arrayDisplay').innerText = ""; // If array is empty, remove text
+        } else {
+          displayArray(); 
+        }
+      }
+    }
+
+    
+    displayArray();
+
+    
+    deleteElement();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find difference</title>
+</head>
+<body>
+    <h1>Here we have taken 5 numbers and we want pairs of numbers with a difference of 2. The given array is 1 5 3 4 2.
+
+        Pairs having a difference of 2 are: (1,3) (2,4) (3,5) Therefore we got output as 3.</h1>
+
+        <script>
+
+function Pairs(arr, k) {
+    let count = 0;
+    arr.forEach((e) => {
+        if (arr.includes(e + k)) {// it is checking array elemes
+            count++;
+        }
+    });
+    return count;
+}
+
+let arr=[1 ,5 ,3 ,4,2]
+console.log(Pairs(arr,2))
+        </script>
+</body>
+</html>

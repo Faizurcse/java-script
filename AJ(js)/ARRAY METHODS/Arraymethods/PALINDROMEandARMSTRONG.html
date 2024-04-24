@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //palindrome number
+    //     let pal=0;
+    //     let n = 242
+    //     let t = n;
+    // while(n!==0){
+    //     let i = n%10;
+    //     pal = (pal*10)+i;
+    //     n=Math.floor(n/10);
+    // }
+    // console.log(pal)
+    // if(t===pal){
+    //     console.log(true);
+    // }
+    // else{
+    //     console.log(false);
+    // }
+// armstrong number
+let m = 0;
+let n = 160
+for(let i=m;i<=n;i++){
+    let num = i.toString();
+    let len = num.length;
+    let sum =0;
+        for(let j=0;j<len;j++){
+          sum = sum +   Math.pow(num[j], len)
+        }
+        if(i===sum){
+            console.log(sum);
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>call apply bind</h1>
+
+    <script>
+        let obj_1={
+            firstName:"faiz",
+            lasName:'khan',
+            getFullname:function(age){
+                 return this.firstName + this.lasName + age} 
+        }
+
+        let obj_2={
+            firstName:"faiz",
+            lasName:'Rahman',
+        }
+
+        console.log(obj_1.getFullname.call(obj_2,11)) 
+
+        console.log(obj_1.getFullname.apply(obj_2,[22]))// more organized
+
+       const a = obj_1.getFullname.bind(obj_2,22)
+        console.log(a)
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>transpose matrix</h1></center>
+
+    <script>
+        let arr = [
+            [12,34],
+            [34,67],
+            //[34,89,98]
+        ]
+
+        
+        let arr2 =[];
+        for(let i=0;i<arr.length;i++){
+            arr2.push([])
+        }
+         // filling zeros first
+
+        //  for(let i=0;i<arr.length;i++){
+        //     arr2.push([])
+        //     for(let j=0;j<arr[i].length;j++){
+        //         arr2[i].push(0)
+        //     }
+        //  }
+
+         // trasposing
+
+         for(let i=0;i<arr.length;i++){
+            
+            for(let j=0;j<arr[i].length;j++){
+                arr2[j][i] = arr[i][j]
+            }
+         }
+
+         console.log(arr2)
+
+
+
+
+         function matrixTranspose(mat, n) {
+  //Write your code here
+     for (let i = 0; i < n; i++) {
+        for (let j = i + 1; j < n; j++) {
+            // Swap the elements at positions (i, j) and (j, i)
+            [mat[i][j], mat[j][i]] = [mat[j][i], mat[i][j]];
+        }
+    }
+    return mat;
+}
+    </script>
+</body>
+</html>

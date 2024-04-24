@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D array</title>
+</head>
+<body>
+    <center><h1>2D ARRAY</h1></center>
+
+
+
+    <script>
+        let arr=[
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+        ]
+        // arr.forEach(element => {
+        //     console.log(element);
+        // });
+        //console.table(arr)// give in the table form all 2D elements
+       // console.log(arr[0]) // give first row
+        for(let i=0;i<arr.length;i++){
+            let row = arr[i]
+            for(let j=0;j<arr[i].length;j++){
+                //console.log(row[j])
+                console.log(arr[i][j])
+            }
+        }
+    </script>
+</body>
+</html>
